@@ -1,15 +1,27 @@
 from PIL import Image
 import os
+import argparse
 
-# Define the current folder path and the output folder for jpg images
-folder_path = os.getcwd()
+# Set up argument parsing
+parser = argparse.ArgumentParser(description="Convert all .webp images in a folder to .jpg format.")
+parser.add_argument(
+    "-f", "--folder",
+    type=str,
+    default=os.getcwd(),
+    help="Specify the folder containing .webp images (default: current folder)"
+)
+
+args = parser.parse_args()
+folder_path = args.folder
+
+# Define the output folder for jpg images
 output_folder = os.path.join(folder_path, 'jpg')
 
 # Create the 'jpg' folder if it doesn't exist
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
-# Loop through each file in the folder
+# Loop through each file in the specified folder
 for filename in os.listdir(folder_path):
     if filename.endswith('.webp'):
         # Construct the full file path
