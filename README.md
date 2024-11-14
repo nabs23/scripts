@@ -14,8 +14,8 @@ A collection of Python utility scripts for everyday tasks that help simplify and
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/utility-scripts.git
-   cd utility-scripts
+   git clone https://github.com/nabs23/scripts
+   cd scripts
    ```
 
 2. (Optional) Set up a virtual environment:
